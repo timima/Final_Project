@@ -13,7 +13,7 @@ router.post("/login", async(req, res) => {
         }
 
         const token = jwt.sign({
-           // specification
+            //specification
         });
 
         res.json({ status: true, token});

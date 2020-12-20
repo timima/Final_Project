@@ -13,7 +13,11 @@ router.post("/login", async(req, res) => {
         }
 
         const token = jwt.sign({
-           // specification
+           userId: user._id
+        },{
+            expiresIn:"9999d"
+        });
+
         });
 
         res.json({ status: true, token});

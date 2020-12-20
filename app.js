@@ -23,6 +23,9 @@ require('dotenv/config');
         res.send('We are on home right now');
     })
 
+    const foodRoute = require('./routes/food');
+    app.use('/food', foodRoute);
+
     //connect to DB
     await mongoose.connect(
         process.env.db_connection, 

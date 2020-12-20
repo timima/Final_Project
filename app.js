@@ -31,10 +31,7 @@ const cors = require('cors');
 
 
     //Routes
-    app.get('/', (reg,res) => {
-        res.send('We are on home right now');
-    })
-
+    
     const foodRoute = require('./routes/food');
     app.use('/food', foodRoute);
 

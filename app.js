@@ -18,6 +18,16 @@ require('dotenv/config');
     const postsRoute = require('./routes/posts');
     app.use('/posts', postsRoute);
 
+    const foodRoute = require('./routes/food');
+    app.use('/food', foodRoute);
+
+    const register_ownerRoute = require('./routes/register_owner');
+    app.use('/', register_ownerRoute);
+
+    const register_clientRoute = require('./routes/register_client');
+    app.use('/', register_clientRoute);
+
+
     //Routes
     app.get('/', (reg,res) => {
         res.send('We are on home right now');

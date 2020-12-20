@@ -27,6 +27,9 @@ require('dotenv/config');
     const register_clientRoute = require('./routes/register_client');
     app.use('/', register_clientRoute);
 
+    const requestRoute = require("./routes/request");
+    app.use('/', requestRoute);
+
 
     //Routes
     app.get('/', (reg,res) => {

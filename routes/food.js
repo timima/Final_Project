@@ -33,3 +33,20 @@ router.post('/',async (req,res) => {
         res.json({error: "no such data"});
     }
 });
+//Update a Post
+router.patch('/:foodId',async (req,res) => {
+    try{
+        const updatedPost = await Food.updateOne(
+            {_id: req.params.foodId}, 
+            {$set: {type_of_food: req.body.type_of_food}},
+            {$set: {category_of_food: req.body.category_of_food}},
+            {$set: {expire_date: req.body.expire_date}},
+            {$set: {description: req.body.description}},
+            {$set: {prices: req.body.prices}}
+        );
+        res.json(updatedPost);
+    }catch(err){
+        res.json({message: err});
+    }
+});
+module.exports = router;
